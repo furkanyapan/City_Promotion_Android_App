@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton imageButton;
-    private Button btnNufusSayisi, btnNufusDagilim, btnTarihiEser;
+    private Button btnNufusSayisi, btnNufusDagilimi, btnTarihiEser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageButton = findViewById(R.id.imageButton);
         btnNufusSayisi = findViewById(R.id.btnNufusSayisi);
-        btnNufusDagilim = findViewById(R.id.btnNufusDagilim);
+        btnNufusDagilimi = findViewById(R.id.btnNufusDagilimi);
         btnTarihiEser = findViewById(R.id.btnTarihiEser);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -41,21 +41,21 @@ public class MainActivity extends AppCompatActivity {
         btnNufusSayisi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, NufusSayisiActivity.class));
             }
         });
 
-        btnNufusDagilim.setOnClickListener(new View.OnClickListener() {
+        btnNufusDagilimi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, NufusDagilimiActivity.class));
             }
         });
 
         btnTarihiEser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(MainActivity.this, TarihiEserlerActivity.class));
             }
         });
     }

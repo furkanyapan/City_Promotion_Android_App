@@ -13,6 +13,24 @@
         android:theme="@style/Theme.SehirTanitim"
         tools:targetApi="31">
         <activity
+            android:name=".TarihiEserlerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NufusDagilimiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NufusSayisiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminTarihiEserlerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminNufusDagilimiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminNufusSayisiActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminMainActivity"
             android:exported="false" />
         <activity
