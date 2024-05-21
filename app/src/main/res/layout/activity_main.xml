@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="13dp"
+        android:text="Hoş Geldiniz"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/viewFlipper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="44dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="21dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/viewFlipper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_admin_panel_settings_24" />
+
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="334dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="80dp"
+        android:autoStart="true"
+        android:flipInterval="2000"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/antandros_antik_kenti" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/daskyleion_antik_kenti" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/kyzikos_antik_kenti" />
+
+    </ViewFlipper>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="Balıkesir: Tarihin İzinde, Doğanın Kucağında"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewFlipper" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="351dp"
+        android:layout_height="229dp"
+        android:layout_marginTop="33dp"
+        android:text="Balıkesir, Türkiye'nin Marmara Bölgesi'nin kuzeyinde yer alan tarihi ve kültürel zenginliklere sahip önemli bir şehirdir. Ege ve Marmara Denizi arasında stratejik konumuyla dikkat çeker.   Şehir, tarih boyunca birçok medeniyete ev sahipliği yapmıştır. Bu nedenle, Balıkesir'de birçok tarihi eser bulunmaktadır. Osmanlı döneminden kalma tarihi yapılar, kaleler, camiler ve hanlar, şehrin kültürel mirasını zenginleştirir. Aynı zamanda, antik döneme ait birçok kalıntı da şehirde bulunmaktadır.   "
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btnNufusSayisi"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="45dp"
+        android:background="#FF0000"
+        android:text="Nüfus Sayısı"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FF0000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnNufusDagilim"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnNufusDagilim"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="45dp"
+        android:background="#FF0000"
+        android:text="Nüfus Dağılımı"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FF0000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnTarihiEser"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNufusSayisi" />
+
+    <Button
+        android:id="@+id/btnTarihiEser"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="45dp"
+        android:background="#FF0000"
+        android:text="Tarihi Eserler"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FF0000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNufusDagilim" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
