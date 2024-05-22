@@ -13,6 +13,18 @@
         android:theme="@style/Theme.SehirTanitim"
         tools:targetApi="31">
         <activity
+            android:name=".GuncelleAdminNufusSayisiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GuncellerAdminNufusSayisiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SilAdminNufusSayisiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EkleAdminNufusSayisiActivity"
+            android:exported="false" />
+        <activity
             android:name=".TarihiEserlerActivity"
             android:exported="false" />
         <activity
