@@ -57,7 +57,7 @@ public class AdminTarihiEserlerActivity extends AppCompatActivity {
         }
         for (int i=0; i<eserListesi.size(); i++){
             if(eserListesi.get(i).getEser_name() != null)
-                eserler.add(eserListesi.get(i).getIlce_name() + " " + eserListesi.get(i).getEser_name());
+                eserler.add(eserListesi.get(i).getIlce_name() + "        " + eserListesi.get(i).getEser_name());
         }
         adt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, eserler);
         listViewTarihiEser.setAdapter(adt);

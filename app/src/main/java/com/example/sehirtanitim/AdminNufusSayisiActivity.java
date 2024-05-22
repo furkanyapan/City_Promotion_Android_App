@@ -56,8 +56,8 @@ public class AdminNufusSayisiActivity extends AppCompatActivity {
         while (c.moveToNext()){
             nufusListesi.add(new Tablo(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
         }
-        for (int i=0; i<nufusListesi.size(); i++){
-            nufuslar.add(nufusListesi.get(i).getIlce_name() + " " + nufusListesi.get(i).getNufus_2021() + " " + nufusListesi.get(i).getNufus_2022() + " " + nufusListesi.get(i).getNufus_2023());
+        for (int i=0; i<nufusListesi.size(); i++) {
+            nufuslar.add(nufusListesi.get(i).getIlce_name() + "      " + nufusListesi.get(i).getNufus_2021() + "      " + nufusListesi.get(i).getNufus_2022() + "      " + nufusListesi.get(i).getNufus_2023());
         }
         adt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, nufuslar);
         listViewNufusSayisi.setAdapter(adt);
