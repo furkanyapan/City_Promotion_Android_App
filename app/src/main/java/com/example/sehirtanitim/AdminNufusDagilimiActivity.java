@@ -60,7 +60,8 @@ public class AdminNufusDagilimiActivity extends AppCompatActivity {
             int nufus23 = nufusListesi.get(i).getNufus_2023();
             int toplamnufus = 1273519;
             double oran = ((double) nufus23 / toplamnufus) * 100;
-            nufuslar.add(ilceadi + "      " + nufus23 + "      " + "%" + String.format("%.2f", oran));
+            if(nufus23 != 0)
+                nufuslar.add(ilceadi + "      " + nufus23 + "      " + "%" + String.format("%.2f", oran));
         }
         adt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, nufuslar);
         listViewNufusDagilimi.setAdapter(adt);
