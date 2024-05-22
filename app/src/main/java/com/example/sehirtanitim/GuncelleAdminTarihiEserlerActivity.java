@@ -15,9 +15,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
+public class GuncelleAdminTarihiEserlerActivity extends AppCompatActivity {
     private Button btnGuncelle, btnAdminMain;
-    private EditText edtIlceAdi, edt2023;
+    private EditText edtIlceAdi, edtTarihiEser;
 
     private Veritabani vt;
 
@@ -26,7 +26,7 @@ public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_guncelle_admin_nufus_dagilimi);
+        setContentView(R.layout.activity_guncelle_admin_tarihi_eserler);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -35,7 +35,7 @@ public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
         btnGuncelle = findViewById(R.id.btnGuncelle);
         btnAdminMain = findViewById(R.id.btnAdminMain);
         edtIlceAdi = findViewById(R.id.edtIlceAdi);
-        edt2023 = findViewById(R.id.edt2023);
+        edtTarihiEser = findViewById(R.id.edtTarihiEser);
 
         vt = new Veritabani(this);
         SQLiteDatabase db = vt.getReadableDatabase();
@@ -44,18 +44,18 @@ public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
         Cursor c = db.rawQuery(sorgu, null);
         c.moveToFirst();
         edtIlceAdi.setText(c.getString(1));
-        edt2023.setText(""+c.getString(4));
+        edtTarihiEser.setText(""+c.getString(5));
 
         btnGuncelle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = vt.getWritableDatabase();
-                String sorgu = "UPDATE Tablo SET ilce_name='"+edtIlceAdi.getText().toString()+"',nufus_2023='"+edt2023.getText().toString()+"' WHERE nufus_id='"+idisi+"'";
+                String sorgu = "UPDATE Tablo SET ilce_name='"+edtIlceAdi.getText().toString()+"',eser_name='"+edtTarihiEser.getText().toString()+"' WHERE nufus_id='"+idisi+"'";
                 try {
                     db.execSQL(sorgu);
-                    Toast.makeText(GuncelleAdminNufusDagilimiActivity.this, "Kayıt başarıyla güncellendi.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GuncelleAdminTarihiEserlerActivity.this, "Kayıt başarıyla güncellendi.", Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
-                    Toast.makeText(GuncelleAdminNufusDagilimiActivity.this, "Kayıt güncellenirken hata oluştu.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GuncelleAdminTarihiEserlerActivity.this, "Kayıt güncellenirken hata oluştu.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -63,9 +63,8 @@ public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
         btnAdminMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GuncelleAdminNufusDagilimiActivity.this, AdminMainActivity.class));
+                startActivity(new Intent(GuncelleAdminTarihiEserlerActivity.this, AdminMainActivity.class));
             }
         });
     }
-
 }
