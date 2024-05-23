@@ -41,7 +41,7 @@ public class EkleAdminTarihiEserlerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 vt = db.getWritableDatabase();
-                String sorgu = "INSERT INTO Tablo (ilce_name, eser_name) VALUES ('" + edtIlceAdi.getText().toString() + "','" + edtTarihiEser.getText().toString() + "')";
+                String sorgu = "INSERT INTO Tablo3 (ilce_name, eser_name) VALUES ('" + edtIlceAdi.getText().toString() + "','" + edtTarihiEser.getText().toString() + "')";
                 vt.execSQL(sorgu);
                 Toast.makeText(getApplicationContext(),"Kayıt Eklendi",Toast.LENGTH_SHORT).show();
             }

@@ -22,7 +22,7 @@ public class TarihiEserlerActivity extends AppCompatActivity {
     private ListView listViewTarihiEser;
 
     private ArrayList<String> eserler;
-    private ArrayList<Tablo> eserListesi;
+    private ArrayList<Tablo3> eserListesi;
 
     private Veritabani vt;
     private ArrayAdapter<String> adt;
@@ -41,13 +41,13 @@ public class TarihiEserlerActivity extends AppCompatActivity {
         listViewTarihiEser = findViewById(R.id.listViewTarihiEser);
 
         eserler = new ArrayList<String>();
-        eserListesi = new ArrayList<Tablo>();
+        eserListesi = new ArrayList<Tablo3>();
         vt = new Veritabani(this);
         SQLiteDatabase db = vt.getReadableDatabase();
-        String sorgu = "SELECT * FROM Tablo";
+        String sorgu = "SELECT * FROM Tablo3";
         Cursor c = db.rawQuery(sorgu, null);
         while (c.moveToNext()){
-            eserListesi.add(new Tablo(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
+            eserListesi.add(new Tablo3(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
         }
         for (int i=0; i<eserListesi.size(); i++){
             if(eserListesi.get(i).getEser_name() != null)

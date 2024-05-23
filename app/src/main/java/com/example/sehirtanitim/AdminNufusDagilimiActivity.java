@@ -24,7 +24,7 @@ public class AdminNufusDagilimiActivity extends AppCompatActivity {
     private ListView listViewNufusDagilimi;
 
     private ArrayList<String> nufuslar;
-    private ArrayList<Tablo> nufusListesi;
+    private ArrayList<Tablo2> nufusListesi;
 
     private Veritabani vt;
     private ArrayAdapter<String> adt;
@@ -47,13 +47,13 @@ public class AdminNufusDagilimiActivity extends AppCompatActivity {
         listViewNufusDagilimi = findViewById(R.id.listViewNufusDagilimi);
 
         nufuslar = new ArrayList<String>();
-        nufusListesi = new ArrayList<Tablo>();
+        nufusListesi = new ArrayList<Tablo2>();
         vt = new Veritabani(this);
         SQLiteDatabase db = vt.getReadableDatabase();
-        String sorgu = "SELECT * FROM Tablo";
+        String sorgu = "SELECT * FROM Tablo2";
         Cursor c = db.rawQuery(sorgu, null);
         while (c.moveToNext()){
-            nufusListesi.add(new Tablo(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
+            nufusListesi.add(new Tablo2(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
         }
         for (int i=0; i<nufusListesi.size(); i++){
             String ilceadi = nufusListesi.get(i).getIlce_name();

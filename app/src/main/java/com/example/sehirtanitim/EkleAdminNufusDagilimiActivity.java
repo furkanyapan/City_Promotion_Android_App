@@ -41,7 +41,7 @@ public class EkleAdminNufusDagilimiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 vt = db.getWritableDatabase();
-                String sorgu = "INSERT INTO Tablo (ilce_name, nufus_2023) VALUES ('" + edtIlceAdi.getText().toString() + "','" + edt2023.getText().toString() + "')";
+                String sorgu = "INSERT INTO Tablo2 (ilce_name, nufus_2023) VALUES ('" + edtIlceAdi.getText().toString() + "','" + edt2023.getText().toString() + "')";
                 vt.execSQL(sorgu);
                 Toast.makeText(getApplicationContext(),"Kayıt Eklendi",Toast.LENGTH_SHORT).show();
             }

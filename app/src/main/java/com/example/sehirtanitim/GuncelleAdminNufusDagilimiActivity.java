@@ -40,7 +40,7 @@ public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
         vt = new Veritabani(this);
         SQLiteDatabase db = vt.getReadableDatabase();
         idisi = getIntent().getIntExtra("idisi", -1);
-        String sorgu="SELECT * FROM Tablo WHERE nufus_id='"+idisi+"'";
+        String sorgu="SELECT * FROM Tablo2 WHERE nufus_id='"+idisi+"'";
         Cursor c = db.rawQuery(sorgu, null);
         c.moveToFirst();
         edtIlceAdi.setText(c.getString(1));
@@ -50,7 +50,7 @@ public class GuncelleAdminNufusDagilimiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = vt.getWritableDatabase();
-                String sorgu = "UPDATE Tablo SET ilce_name='"+edtIlceAdi.getText().toString()+"',nufus_2023='"+edt2023.getText().toString()+"' WHERE nufus_id='"+idisi+"'";
+                String sorgu = "UPDATE Tablo2 SET ilce_name='"+edtIlceAdi.getText().toString()+"',nufus_2023='"+edt2023.getText().toString()+"' WHERE nufus_id='"+idisi+"'";
                 try {
                     db.execSQL(sorgu);
                     Toast.makeText(GuncelleAdminNufusDagilimiActivity.this, "Kayıt başarıyla güncellendi.", Toast.LENGTH_SHORT).show();

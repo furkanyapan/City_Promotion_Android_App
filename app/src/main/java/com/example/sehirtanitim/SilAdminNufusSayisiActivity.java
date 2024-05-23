@@ -41,7 +41,7 @@ public class SilAdminNufusSayisiActivity extends AppCompatActivity {
         idisi = getIntent().getIntExtra("idisi", -1);
 
         if(idisi !=-1){
-            String sorgu = "SELECT * FROM Tablo WHERE nufus_id ='" + idisi + "'";
+            String sorgu = "SELECT * FROM Tablo1 WHERE nufus_id ='" + idisi + "'";
             Cursor c = db.rawQuery(sorgu, null);
             if (c != null && c.moveToFirst()) {
                 String mesaj = "İlçe Adı : " + c.getString(1) + " 2021 Nufusu : " + c.getInt(2) +" 2022 Nufusu : " + c.getInt(3) + " 2023 Nufusu : " + c.getInt(4) + " kaydını silmek istiyor musunuz?";
@@ -58,7 +58,7 @@ public class SilAdminNufusSayisiActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = vt.getWritableDatabase();
-                String sorgu = "DELETE FROM Tablo WHERE nufus_id='" + idisi + "'";
+                String sorgu = "DELETE FROM Tablo1 WHERE nufus_id='" + idisi + "'";
                 try {
                     db.execSQL(sorgu);
                     Toast.makeText(SilAdminNufusSayisiActivity.this, "Kayıt başarıyla silindi.", Toast.LENGTH_SHORT).show();

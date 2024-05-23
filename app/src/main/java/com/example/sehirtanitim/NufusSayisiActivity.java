@@ -5,12 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +22,7 @@ public class NufusSayisiActivity extends AppCompatActivity {
     private ListView listViewNufusSayisi;
 
     private ArrayList<String> nufuslar;
-    private ArrayList<Tablo> nufusListesi;
+    private ArrayList<Tablo1> nufusListesi;
 
     private Veritabani vt;
     private ArrayAdapter<String> adt;
@@ -45,13 +42,13 @@ public class NufusSayisiActivity extends AppCompatActivity {
         listViewNufusSayisi = findViewById(R.id.listViewNufusSayisi);
 
         nufuslar = new ArrayList<String>();
-        nufusListesi = new ArrayList<Tablo>();
+        nufusListesi = new ArrayList<Tablo1>();
         vt = new Veritabani(this);
         SQLiteDatabase db = vt.getReadableDatabase();
-        String sorgu = "SELECT * FROM Tablo";
+        String sorgu = "SELECT * FROM Tablo1";
         Cursor c = db.rawQuery(sorgu, null);
         while (c.moveToNext()){
-            nufusListesi.add(new Tablo(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
+            nufusListesi.add(new Tablo1(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
         }
         for (int i=0; i<nufusListesi.size(); i++){
             if(nufusListesi.get(i).getNufus_2021() != 0 && nufusListesi.get(i).getNufus_2022() != 0)

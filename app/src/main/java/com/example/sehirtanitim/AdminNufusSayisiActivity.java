@@ -24,7 +24,7 @@ public class AdminNufusSayisiActivity extends AppCompatActivity {
     private ListView listViewNufusSayisi;
 
     private ArrayList<String> nufuslar;
-    private ArrayList<Tablo> nufusListesi;
+    private ArrayList<Tablo1> nufusListesi;
 
     private Veritabani vt;
     private ArrayAdapter<String> adt;
@@ -48,13 +48,13 @@ public class AdminNufusSayisiActivity extends AppCompatActivity {
         listViewNufusSayisi = findViewById(R.id.listViewNufusSayisi);
 
         nufuslar = new ArrayList<String>();
-        nufusListesi = new ArrayList<Tablo>();
+        nufusListesi = new ArrayList<Tablo1>();
         vt = new Veritabani(this);
         SQLiteDatabase db = vt.getReadableDatabase();
-        String sorgu = "SELECT * FROM Tablo";
+        String sorgu = "SELECT * FROM Tablo1";
         Cursor c = db.rawQuery(sorgu, null);
         while (c.moveToNext()){
-            nufusListesi.add(new Tablo(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
+            nufusListesi.add(new Tablo1(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3), c.getInt(4), c.getString(5)));;
         }
         for (int i=0; i<nufusListesi.size(); i++) {
             if(nufusListesi.get(i).getNufus_2021() != 0 && nufusListesi.get(i).getNufus_2022() != 0)

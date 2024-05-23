@@ -1,10 +1,10 @@
 package com.example.sehirtanitim;
 
-public class Tablo {
-    public Tablo() {
+public class Tablo3 {
+    public Tablo3() {
     }
 
-    public Tablo(int nufus_id, String ilce_name, int nufus_2021, int nufus_2022, int nufus_2023, String eser_name) {
+    public Tablo3(int nufus_id, String ilce_name, int nufus_2021, int nufus_2022, int nufus_2023, String eser_name) {
         this.nufus_id = nufus_id;
         this.ilce_name = ilce_name;
         this.nufus_2021 = nufus_2021;
