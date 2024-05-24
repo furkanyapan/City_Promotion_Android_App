@@ -14,7 +14,7 @@
         android:layout_marginTop="38dp"
         android:ems="10"
         android:hint="2023 Nufusu"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
