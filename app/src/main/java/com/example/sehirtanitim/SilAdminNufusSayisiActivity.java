@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SilAdminNufusSayisiActivity extends AppCompatActivity {
     private Button btnAdminMain, btnEvet;
-    private TextView textViewBilgi;
+    private TextView textViewIlceAdi, textViewNufus21, textViewNufus22, textViewNufus23, textViewBilgi;
     private Veritabani vt;
     private int idisi;
     @Override
@@ -36,6 +36,10 @@ public class SilAdminNufusSayisiActivity extends AppCompatActivity {
 
         btnAdminMain = findViewById(R.id.btnAdminMain);
         btnEvet = findViewById(R.id.btnEvet);
+        textViewIlceAdi = findViewById(R.id.textViewIlceAdi);
+        textViewNufus21 = findViewById(R.id.textViewNufus21);
+        textViewNufus22 = findViewById(R.id.textViewNufus22);
+        textViewNufus23 = findViewById(R.id.textViewNufus23);
         textViewBilgi = findViewById(R.id.textViewBilgi);
 
         idisi = getIntent().getIntExtra("idisi", -1);
@@ -44,8 +48,16 @@ public class SilAdminNufusSayisiActivity extends AppCompatActivity {
             String sorgu = "SELECT * FROM Tablo1 WHERE nufus_id ='" + idisi + "'";
             Cursor c = db.rawQuery(sorgu, null);
             if (c != null && c.moveToFirst()) {
-                String mesaj = "İlçe Adı : " + c.getString(1) + " 2021 Nufusu : " + c.getInt(2) +" 2022 Nufusu : " + c.getInt(3) + " 2023 Nufusu : " + c.getInt(4) + " kaydını silmek istiyor musunuz?";
-                textViewBilgi.setText(mesaj);
+                String mesajIlceAdi = "İlçe Adı : " + c.getString(1);
+                String mesajNufus21 = "2021 Nufusu : " + c.getInt(2);
+                String mesajNufus22 = "2022 Nufusu : " + c.getInt(3);
+                String mesajNufus23 = "2023 Nufusu : " + c.getInt(4);
+                String mesajBilgi = "Kaydını silmek istediğinizden emin misiniz?";
+                textViewIlceAdi.setText(mesajIlceAdi);
+                textViewNufus21.setText(mesajNufus21);
+                textViewNufus22.setText(mesajNufus22);
+                textViewNufus23.setText(mesajNufus23);
+                textViewBilgi.setText(mesajBilgi);
                 c.close();
             } else {
                 textViewBilgi.setText("Kayıt bulunamadı.");

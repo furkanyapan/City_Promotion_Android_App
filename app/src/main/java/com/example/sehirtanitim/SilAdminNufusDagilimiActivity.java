@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SilAdminNufusDagilimiActivity extends AppCompatActivity {
     private Button btnAdminMain, btnEvet;
-    private TextView textViewBilgi;
+    private TextView textViewIlceAdi, textViewNufus23, textViewBilgi;
     private Veritabani vt;
     private int idisi;
     @Override
@@ -35,6 +35,8 @@ public class SilAdminNufusDagilimiActivity extends AppCompatActivity {
 
         btnAdminMain = findViewById(R.id.btnAdminMain);
         btnEvet = findViewById(R.id.btnEvet);
+        textViewIlceAdi = findViewById(R.id.textViewIlceAdi);
+        textViewNufus23 = findViewById(R.id.textViewNufus23);
         textViewBilgi = findViewById(R.id.textViewBilgi);
 
         idisi = getIntent().getIntExtra("idisi", -1);
@@ -43,8 +45,12 @@ public class SilAdminNufusDagilimiActivity extends AppCompatActivity {
             String sorgu = "SELECT * FROM Tablo2 WHERE nufus_id ='" + idisi + "'";
             Cursor c = db.rawQuery(sorgu, null);
             if (c != null && c.moveToFirst()) {
-                String mesaj = "İlçe Adı : " + c.getString(1) + " 2023 Nufusu : " + c.getInt(4) + " kaydını silmek istiyor musunuz?";
-                textViewBilgi.setText(mesaj);
+                String mesajIlceAdi = "İlçe Adı : " + c.getString(1);
+                String mesajNufus23 = "2023 Nufusu : " + c.getInt(4);
+                String mesajBilgi = "Kaydını silmek istediğinizden emin misiniz?";
+                textViewIlceAdi.setText(mesajIlceAdi);
+                textViewNufus23.setText(mesajNufus23);
+                textViewBilgi.setText(mesajBilgi);
                 c.close();
             } else {
                 textViewBilgi.setText("Kayıt bulunamadı.");
